@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: polaris
+Version: 0.1.0
+Summary: AI-Enabled Antarctic Sea Ice and Iceberg Trajectory & Navigation Decision Support System
+License: Proprietary
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: rasterio
+Requires-Dist: opencv-python
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: shapely
+Requires-Dist: geopandas
+Requires-Dist: scikit-learn
+Requires-Dist: requests
+Requires-Dist: httpx
+Requires-Dist: matplotlib
+Requires-Dist: python-dotenv
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+
+POLARIS
+
+Antarctic sea-ice / iceberg trajectory and navigation decision support.
+
+Core pipeline:
+  MODIS Acquisition -> Processing -> Detection -> Features
+  -> Tracking -> Prediction -> Risk -> Navigation -> ECDIS/Dashboard
+
+Modules
+-------
+acquisition  : NASA Earthdata / LAADS DAAC retrieval of MODIS Aqua products
+processing   : GDAL/Rasterio raster pipeline (crop, reproject, resample, bands)
+detection    : OpenCV / AI-ML sea-ice and iceberg detection
+features     : spatial, spectral, environmental, temporal feature extraction
+tracking     : multi-temporal iceberg association and trajectory building
+prediction   : AI/ML time-series trajectory forecasting
+risk         : ship-iceberg closest approach and risk classification
+navigation   : safer-route recommendation and ECDIS decision-support output
+storage      : local processed/feature persistence + offline sync
+dashboard    : interactive Antarctic map interface
+
+Usage
+-----
+1. Install dependencies:
+     pip install -r requirements-gdal.txt
+     pip install -r requirements.txt
+2. Configure environment:
+     cp .env.example .env   # add NASA Earthdata credentials
+3. Run the pipeline (see scripts/).
+
+Configuration lives in config/; runtime credentials in .env.

@@ -1,0 +1,27 @@
+# Core geospatial
+numpy
+GDAL==3.13.3
+rasterio
+rasterio[s3]
+
+# Imagery / computer vision
+opencv-python
+
+# Scientific / data handling
+pandas
+scipy
+shapely
+geopandas
+
+# AI/ML
+scikit-learn
+
+# HTTP / data services
+requests
+httpx
+
+# Dashboard / visualization
+matplotlib
+
+# Runtime / tooling
+python-dotenv

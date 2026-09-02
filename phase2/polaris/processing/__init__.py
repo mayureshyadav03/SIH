@@ -1,0 +1,1 @@
+"""GDAL / Rasterio raster pipeline: crop, reproject, resample, extract bands."""

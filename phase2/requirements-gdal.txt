@@ -1,0 +1,4 @@
+# Requires native library: on macOS `brew install gdal`, on Linux `apt install libgdal-dev`
+GDAL==3.13.3
+rasterio
+setuptools
